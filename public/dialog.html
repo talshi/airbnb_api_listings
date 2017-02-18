@@ -1,0 +1,41 @@
+<md-dialog aria-label="Dialog">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Details</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">&times;</md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-card md-theme="default" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{listing.name}}</span>
+                            <span class="md-subhead">{{listing.public_address}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media"><img ng-src="{{listing.picture_url}}" /></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center"></md-card-actions>
+                </md-card>
+            </div>
+            <fieldset class="reviews">
+                <legend>Reviews</legend>
+                <div ng-repeat="review in data.reviews" class="review">
+                    <div class="name">{{review.author.first_name}}</div>
+                    <div class="comments">{{review.comments}}</div>
+                    <div class="date">{{review.created_at | date: 'MMMM yyyy'}}</div>
+                </div>
+            </fieldset>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

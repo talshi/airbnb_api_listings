@@ -1,0 +1,14 @@
+<md-card md-theme="default" md-theme-watch ng-show="data.selectedCity != ''">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{listing.listing.name}}</span>
+            <span class="md-subhead">{{listing.listing.public_address}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-lg card-media"><img ng-src="{{listing.listing.picture_url}}" /></div>
+        </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="showDialog($event, listing.listing)" class="md-button md-raised md-primary">Details</md-button>
+    </md-card-actions>
+</md-card>
